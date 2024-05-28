@@ -1,0 +1,118 @@
+# Dashboard YAML
+# Reference documentation: https://docs.rilldata.com/reference/project-files/dashboards
+# This file was generated using AI.
+
+type: metrics_view
+title: Metrics for Dollar Exchange Rates
+table: Dollar_Exchange
+timeseries: Date
+dimensions:
+  - label: Yer=X
+    column: YER=X
+    description: ""
+  - label: Uzs=X
+    column: UZS=X
+    description: ""
+  - label: Try=X
+    column: TRY=X
+    description: ""
+  - label: Tmt=X
+    column: TMT=X
+    description: ""
+  - label: Mvr=X
+    column: MVR=X
+    description: ""
+  - label: Afn=X
+    column: AFN=X
+    description: ""
+measures:
+  - name: average_cny_exchange_rate
+    label: Average CNY Exchange Rate
+    expression: AVG("CNY=X")
+    description: Average exchange rate for Chinese Yuan (CNY)
+    format_preset: humanize
+    valid_percent_of_total: false
+  - name: max_omr_exchange_rate
+    label: Max OMR Exchange Rate
+    expression: MAX("OMR=X")
+    description: Maximum exchange rate for Omani Rial (OMR)
+    format_preset: humanize
+    valid_percent_of_total: false
+  - name: total_records
+    label: Total Records
+    expression: COUNT(*)
+    description: Total number of records in the table
+    format_preset: humanize
+    valid_percent_of_total: false
+  - name: min_vnd_exchange_rate
+    label: Min VND Exchange Rate
+    expression: MIN("VND=X")
+    description: Minimum exchange rate for Vietnamese Dong (VND)
+    format_preset: humanize
+    valid_percent_of_total: false
+  - name: sum_sgd_exchange_rate
+    label: Total SGD Exchange Rate
+    expression: SUM("SGD=X")
+    description: Total exchange rate for Singapore Dollar (SGD)
+    format_preset: humanize
+    valid_percent_of_total: true
+  - name: average_idr_exchange_rate
+    label: Average IDR Exchange Rate
+    expression: AVG("IDR=X")
+    description: Average exchange rate for Indonesian Rupiah (IDR)
+    format_preset: humanize
+    valid_percent_of_total: false
+  - name: max_krw_exchange_rate
+    label: Max KRW Exchange Rate
+    expression: MAX("KRW=X")
+    description: Maximum exchange rate for South Korean Won (KRW)
+    format_preset: humanize
+    valid_percent_of_total: false
+  - name: min_aed_exchange_rate
+    label: Min AED Exchange Rate
+    expression: MIN("AED=X")
+    description: Minimum exchange rate for UAE Dirham (AED)
+    format_preset: humanize
+    valid_percent_of_total: false
+  - name: average_qar_exchange_rate
+    label: Average QAR Exchange Rate
+    expression: AVG("QAR=X")
+    description: Average exchange rate for Qatari Riyal (QAR)
+    format_preset: humanize
+    valid_percent_of_total: false
+  - name: total_missing_yer_values
+    label: Total Missing YER Values
+    expression: COUNTIf("YER=X" IS NULL)
+    description: Total number of missing values for Yemeni Rial (YER)
+    format_preset: humanize
+    valid_percent_of_total: false
+available_time_zones:
+  - America/Los_Angeles
+  - America/Chicago
+  - America/New_York
+  - Europe/London
+  - Europe/Paris
+  - Asia/Jerusalem
+  - Europe/Moscow
+  - Asia/Kolkata
+  - Asia/Shanghai
+  - Asia/Tokyo
+  - Australia/Sydney
+available_time_ranges:
+  - PT6H
+  - PT24H
+  - P7D
+  - P14D
+  - P4W
+  - P3M
+  - P12M
+  - rill-TD
+  - rill-WTD
+  - rill-MTD
+  - rill-QTD
+  - rill-YTD
+  - rill-PDC
+  - rill-PWC
+  - rill-PMC
+  - rill-PQC
+  - rill-PYC
